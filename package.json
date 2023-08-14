@@ -1,0 +1,43 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "React and Webpack, simple configuration",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon",
+    "build-and-expose": "webpack && node backend localhost 8000"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/react": "^18.2.20",
+    "babel-loader": "^8.3.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^4.10.0",
+    "webpack-deadcode-plugin": "^0.1.17"
+  },
+  "browserslist": [
+    "cover 99.5%",
+    "Firefox > 20",
+    "last 7 Safari versions",
+    "last 7 ios versions",
+    "IE 11",
+    "not dead"
+  ],
+  "keywords": [
+    "nodasoft",
+    "react"
+  ]
+}
