@@ -12,6 +12,13 @@ declare function _exports(): {
             use: (string | {
                 loader: string;
                 options: {
+                    import: boolean;
+                    modules: {
+                        mode: string;
+                        auto: boolean;
+                        exportGlobals: boolean;
+                        localIdentName: string;
+                    };
                     importLoaders: number;
                     postcssOptions?: undefined;
                 };
@@ -21,6 +28,8 @@ declare function _exports(): {
                     postcssOptions: {
                         plugins: string[][];
                     };
+                    import?: undefined;
+                    modules?: undefined;
                     importLoaders?: undefined;
                 };
             })[];

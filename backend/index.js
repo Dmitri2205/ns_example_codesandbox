@@ -1,13 +1,12 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-
-//Сервер
+//create a server object:
 http
   .createServer((req, res) => {
     const commonFilePath = path.join(__dirname, "../", "build", req.url);
     const filePath = req.url.endsWith("/")
-      ? path.join(commonFilePath, "./index.html")
+      ? path.join(commonFilePath, "index.html")
       : commonFilePath;
 
     fs.readFile(filePath, (err, file) => {
@@ -21,7 +20,7 @@ http
       res.end();
     });
   })
-  .listen(8000); // Слушаем 8000 порт
+  .listen(8000); //слушаем порт
 process.on("SIGINT", () => {
   console.log("Bye bye!");
   process.exit();

@@ -1,11 +1,12 @@
 import React from "react";
 import { IUserInfoProps } from "./App";
+import styles from "./styles/styles.module.scss";
 
 const UserInfo = ({ user }: IUserInfoProps) => {
   return (
     <>
       {user ? (
-        <table>
+        <table className={styles.user_table}>
           <thead>
             <tr>
               <th>Username</th>

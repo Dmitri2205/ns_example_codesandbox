@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useThrottle from "./useThrottle";
 import Button from "./Button";
 import UserInfo from "./UserInfo";
+import styles from "./styles/styles.module.scss";
 
 const URL = "https://jsonplaceholder.typicode.com/users";
 
@@ -56,8 +57,8 @@ function App(): JSX.Element {
   };
 
   return (
-    <div>
-      <header>Get a random user</header>
+    <div className={styles.get_user_wrapper}>
+      <header className={styles.header}>Get a random user</header>
       <Button clickCallback={useThrottle(handleButtonClick, 1000)} />
       <UserInfo user={item as TUser} />
     </div>

@@ -18,6 +18,13 @@ const rules = [
       {
         loader: "css-loader",
         options: {
+          import: true,
+          modules: {
+            mode: "local",
+            auto: true,
+            exportGlobals: true,
+            localIdentName: "[local]--[hash:base64:5]",
+          },
           importLoaders: 1,
         },
       },
@@ -77,7 +84,7 @@ module.exports = () => {
       new MiniCssExtractPlugin({}),
       new DeadCodePlugin({
         patterns: ["src/**/*.(js|jsx|ts|tsx|css)"],
-        exclude: ["**/*.(dist).(js|jsx)"],
+        exclude: ["**/*.(dist)"],
       }),
     ],
     optimization: {
@@ -87,7 +94,7 @@ module.exports = () => {
     entry: "./index.js",
     module: { rules },
     resolve: {
-      extensions: [".tsx", ".ts", ".js", ".jsx"],
+      extensions: [".tsx", ".ts", ".js", ".jsx", "..."],
     },
     output: {
       filename: "[name].bundle.js",
